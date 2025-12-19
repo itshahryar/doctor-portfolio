@@ -61,7 +61,7 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => handleClick(item)}
-                className="text-sm font-medium text-slate-700 hover:text-emerald-700 hover:underline underline-offset-8"
+                className="text-sm font-medium text-slate-700 hover:text-emerald-700 hover:underline underline-offset-8 cursor-pointer"
               >
                 {item.label}
               </button>
@@ -69,7 +69,7 @@ export default function Navbar() {
 
             <button
               onClick={() => navigate("/appointment")}
-              className="rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-semibold text-white shadow-md"
+              className="rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-semibold text-white shadow-md cursor-pointer"
             >
               Book Appointment
             </button>
@@ -77,7 +77,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="sm:hidden text-slate-800"
+            className="sm:hidden text-slate-800 cursor-pointer"
             onClick={() => setMenuOpen(true)}
           >
             <FaBars size={22} />
@@ -91,7 +91,7 @@ export default function Navbar() {
           <>
             {/* Overlay */}
             <motion.div
-              className="fixed inset-0 z-40 bg-black/40"
+              className="fixed inset-0 z-40 bg-black/40 cursor-pointer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -111,7 +111,7 @@ export default function Navbar() {
                 <span className="text-sm font-semibold text-slate-900">
                   Menu
                 </span>
-                <button onClick={() => setMenuOpen(false)}>
+                <button onClick={() => setMenuOpen(false)} className="cursor-pointer">
                   <FaTimes size={20} />
                 </button>
               </div>
@@ -122,7 +122,7 @@ export default function Navbar() {
                   <button
                     key={item.id}
                     onClick={() => handleClick(item)}
-                    className="text-left text-sm font-medium text-slate-700 hover:text-emerald-600"
+                    className="text-left text-sm font-medium text-slate-700 hover:text-emerald-600 cursor-pointer"
                   >
                     {item.label}
                   </button>
@@ -133,7 +133,7 @@ export default function Navbar() {
                     navigate("/appointment");
                     setMenuOpen(false);
                   }}
-                  className="mt-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 py-2 text-xs font-semibold text-white shadow-md"
+                  className="mt-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 py-2 text-xs font-semibold text-white shadow-md cursor-pointer"
                 >
                   Book Appointment
                 </button>

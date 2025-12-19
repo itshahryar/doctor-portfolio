@@ -15,6 +15,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
+  // Show navigation loader
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => {
@@ -22,6 +23,11 @@ function App() {
     }, 500); // Show loader for 500ms during navigation
 
     return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
   return (
