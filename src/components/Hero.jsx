@@ -123,7 +123,7 @@ export default function Hero({ onNavigate }) {
                   }, 100);
                 }
               }}
-              className="group relative overflow-hidden rounded-full bg-white px-8 py-4 font-semibold text-emerald-700 shadow-2xl shadow-emerald-900/30 transition-all duration-300 hover:shadow-emerald-900/50"
+              className="group cursor-pointer relative overflow-hidden rounded-full bg-white px-8 py-4 font-semibold text-emerald-700 shadow-2xl shadow-emerald-900/30 transition-all duration-300 hover:shadow-emerald-900/50"
             >
               <span className="relative z-10 flex items-center gap-2">
                 About Me
@@ -135,7 +135,7 @@ export default function Hero({ onNavigate }) {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => onNavigate && onNavigate('appointment')}
-              className="group relative overflow-hidden rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:bg-white/20 hover:border-white/50"
+              className="group cursor-pointer relative overflow-hidden rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:bg-white/20 hover:border-white/50"
             >
               <span className="relative z-10">Get In Touch</span>
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
