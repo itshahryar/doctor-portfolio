@@ -12,7 +12,8 @@ const CERT_ITEMS = [
       'Focused on early detection, risk factors, and the importance of patient education—reinforcing a commitment to preventive medicine.',
     icon: <FaRibbon className="text-pink-600" />,
     color: 'from-pink-50 to-rose-50',
-    badgeColor: 'bg-pink-100 text-pink-800 ring-pink-200'
+    badgeColor: 'bg-pink-100 text-pink-800 ring-pink-200',
+    image: 'Breast Cancer Awareness Seminar.png'
   },
   {
     name: 'Pathways for Medical Students – Guidance Seminar',
@@ -22,7 +23,8 @@ const CERT_ITEMS = [
       'Covered specialty selection, research opportunities, and long-term career planning, highlighting diverse roles in clinical practice, academia, and public health.',
     icon: <FaChalkboardTeacher className="text-blue-600" />,
     color: 'from-blue-50 to-indigo-50',
-    badgeColor: 'bg-blue-100 text-blue-800 ring-blue-200'
+    badgeColor: 'bg-blue-100 text-blue-800 ring-blue-200',
+    image: 'Pathways for Medical Students – Guidance Seminar.PNG'
   },
   {
     name: 'Sports Events Participation',
@@ -32,7 +34,8 @@ const CERT_ITEMS = [
       'Built teamwork, discipline, and resilience—values essential for a demanding profession like medicine.',
     icon: <FaRunning className="text-emerald-600" />,
     color: 'from-emerald-50 to-teal-50',
-    badgeColor: 'bg-emerald-100 text-emerald-800 ring-emerald-200'
+    badgeColor: 'bg-emerald-100 text-emerald-800 ring-emerald-200',
+    image: 'Sports Events Participation_page-0001.jpg'
   },
   {
     name: 'MEDEX Event Participation',
@@ -42,7 +45,8 @@ const CERT_ITEMS = [
       'Engaged with medical students and professionals, gaining exposure to new ideas, networking opportunities, and current trends in medical education and healthcare.',
     icon: <FaHospitalSymbol className="text-teal-600" />,
     color: 'from-teal-50 to-cyan-50',
-    badgeColor: 'bg-teal-100 text-teal-800 ring-teal-200'
+    badgeColor: 'bg-teal-100 text-teal-800 ring-teal-200',
+    image: 'MEDEX Event Participation_page-0001.jpg'
   },
 ];
 
@@ -176,31 +180,41 @@ export default function Certifications() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                    className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-white to-white/90 p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-white to-white/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" style={{ background: `linear-gradient(to bottom right, ${item.color.split(' ')[0]}, ${item.color.split(' ')[1]})` }}></div>
-                    
-                    <div className="relative">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex items-start gap-4">
-                          <div className="mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white to-slate-50 text-slate-700 shadow-md group-hover:scale-110 transition-transform duration-300">
+                    {/* Image Section - FIXED */}
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-slate-100">
+                      <img 
+                        src={`/certifications/${encodeURIComponent(item.image)}`} 
+                        alt={item.name}
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 rounded-lg bg-white/90 backdrop-blur-sm shadow-md">
                             {item.icon}
                           </div>
-                          <div>
-                            <h4 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                              {item.name}
-                            </h4>
-                            <p className="mt-1 text-sm text-slate-600 group-hover:text-slate-700 transition-colors">
-                              {item.category}
-                            </p>
-                          </div>
+                          <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${item.badgeColor} ring-1 shadow-sm`}>
+                            {item.type}
+                          </span>
                         </div>
-                        <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${item.badgeColor} ring-1 shadow-sm`}>
-                          {item.type}
-                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h4 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                            {item.name}
+                          </h4>
+                          <p className="mt-1 text-sm text-slate-600 group-hover:text-slate-700 transition-colors">
+                            {item.category}
+                          </p>
+                        </div>
                       </div>
                       
-                      <div className="mt-6">
+                      <div className="mt-4">
                         <p className="text-slate-600 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
                           {item.description}
                         </p>

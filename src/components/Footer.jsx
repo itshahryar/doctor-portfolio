@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const phone = '+92 301 3266529';
 const email = 'ibtisamkhalid39@gmail.com';
-const instagramUrl = 'https://www.instagram.com/ibtisam_khalid21';
+const instagramUrl = 'https://www.instagram.com/doc_ibtisam24/';
 const facebookUrl = 'https://www.facebook.com/share/17Voy9Z9c1/?mibextid=wwXIfr';
 const whatsappUrl = 'https://wa.me/923013266529?text=Hello%20Dr.%20Ibtisam%2C%20I%20would%20like%20to%20book%20an%20appointment.';
 
@@ -11,10 +11,10 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-linear-to-b from-white via-emerald-50/30 to-white border-t border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <div className="grid gap-8 lg:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+          <div className="grid gap-4 lg:grid-cols-2">
             {/* Left Column: Personal Branding */}
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 text-white shadow-lg">
                   <FaStethoscope className="w-6 h-6" />
@@ -24,53 +24,36 @@ export default function Footer() {
                   <p className="text-sm text-slate-600">Medical Professional</p>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
-                Dedicated to excellence in medicine, compassionate patient care, and continuous learning.
-              </p>
               <div className="flex items-center gap-2 text-emerald-700">
                 <FaHeart className="w-4 h-4" />
                 <span className="text-sm font-medium">Compassionate Healthcare</span>
               </div>
             </div>
 
-            {/* Middle Column: Get In Touch */}
-            <div className="space-y-4">
+            {/* Right Column: Get In Touch with all icons */}
+            <div className="space-y-2">
               <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-emerald-700">
                 GET IN TOUCH
               </h3>
-              <div className="space-y-3">
+              <div className="flex gap-3">
                 <motion.a
                   href={`tel:${phone.replace(/\s/g, '')}`}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  className="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white p-4 shadow-sm hover:shadow-md transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-100 bg-white text-emerald-700 shadow-sm hover:shadow-md hover:bg-emerald-50 transition-all"
+                  aria-label="Phone"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
-                    <FaPhoneAlt className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm font-medium text-slate-900">{phone}</span>
+                  <FaPhoneAlt className="w-6 h-6" />
                 </motion.a>
                 <motion.a
                   href={`mailto:${email}?subject=Appointment%20Request`}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  className="flex items-center gap-3 rounded-xl border border-emerald-100 bg-white p-4 shadow-sm hover:shadow-md transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-100 bg-white text-emerald-700 shadow-sm hover:shadow-md hover:bg-emerald-50 transition-all"
+                  aria-label="Email"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
-                    <FaEnvelope className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm font-medium text-slate-900 break-all">{email}</span>
+                  <FaEnvelope className="w-6 h-6" />
                 </motion.a>
-              </div>
-            </div>
-
-            {/* Right Column: Follow Me */}
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-emerald-700">
-                FOLLOW ME
-              </h3>
-              <p className="text-sm text-slate-600">
-                Connect with me on social media
-              </p>
-              <div className="flex gap-3">
                 <motion.a
                   href={instagramUrl}
                   target="_blank"
@@ -100,7 +83,7 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright */}
         <div className="border-t border-slate-200 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-600">
               <p>© 2025 Dr. Ibtisam Khalid. All rights reserved.</p>
               <p className="flex items-center gap-1">
@@ -121,7 +104,7 @@ export default function Footer() {
         transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-50 group"
+        className="fixed bottom-4 right-6 z-50 group"
         aria-label="Contact via WhatsApp"
       >
         <div className="relative">
@@ -182,3 +165,4 @@ export default function Footer() {
     </>
   );
 }
+
